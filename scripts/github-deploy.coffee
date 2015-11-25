@@ -6,7 +6,7 @@ module.exports = (robot) ->
 
   robot.respond /deploy\s+(.*)\s+(.*)/i, (msg)->
     repo       = github.qualified_repo msg.match[1]
-    baseBranch = 'deployment/staging'
+    baseBranch = 'deploy'
     headBranch = msg.match[2]
 
     accountName = msg.envelope.user.name || "anonymous" #このスクリプトを呼び出した人のSlackアカウント名
